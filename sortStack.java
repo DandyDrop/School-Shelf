@@ -5,53 +5,34 @@ public class sortStack {
         Stack<Integer> temp = new Stack<Integer>();
         System.out.println("Now the Stack looks like so: \n" + s);
         while (!isSorted(s)) {
-            int x = s.pop();
-            int y = s.pop();
-            if (x > y) {
-                temp.push(y);
-                temp.push(x);
-            } else {
-                temp.push(x);
-                temp.push(y);
-            }
             while (!s.isEmpty()) {
-                int z = s.pop();
-                if (z < temp.top()) {
-                    int y1 = temp.pop();
-                    temp.push(z);
-                    temp.push(y1);
-                } else temp.push(z);
+                if (temp.isEmpty()) temp.push(s.pop());
+                int x = s.pop();
+                if (x < temp.top()) {
+                    int y = temp.pop();
+                    temp.push(x);
+                    temp.push(y);
+                } else temp.push(x);
                 System.out.println("Now the Stack looks like so: \n" + s);
                 System.out.println("temp - " + temp);
             }
             while (!temp.isEmpty()) s.push(temp.pop());
-            System.out.println("Now the Stack looks like so: \n" + s);
+            System.out.println("Now a bit sorted Stack looks like so: \n" + s);
         }
         System.out.println("Sorted Stack: " + s);
         return s;
     }
 
-    private static boolean isSorted(Stack<Integer> s) {
+    public static boolean isSorted(Stack<Integer> s) {
         boolean flag = true;
         Stack<Integer> temp = new Stack<Integer>();
-        int x = s.pop();
-        int y = s.pop();
-        if (x > y) {
-            s.push(y);
-            s.push(x);
-            return false;
-        }
-        else {
-            temp.push(x);
-            temp.push(y);
-        }
-        while(!s.isEmpty() && flag) {
-            x = s.pop();
+        while (!s.isEmpty() && flag) {
+            if (temp.isEmpty()) temp.push(s.pop());
+            int x = s.pop();
             if (x < temp.top()) {
                 flag = false;
                 s.push(x);
-            }
-            else temp.push(x);
+            } else temp.push(x);
             System.out.println("Now the Stack looks like so: \n" + s);
             System.out.println("temp - " + temp);
         }

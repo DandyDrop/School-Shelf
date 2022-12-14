@@ -4,6 +4,7 @@ Israel; 11-th grade
 "M" - Morning (mornings lessons)
 "E" - Evening (evening lessons)
 
+"A" - And
 "St" - Stack
 "NSt" - New Stack()
 Important Links:

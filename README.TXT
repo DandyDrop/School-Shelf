@@ -6,7 +6,7 @@ Israel; 11-th grade
 
 "A" - And
 "St" - Stack
-"El" - Elements
-"Pos" - Positive
+"El" - Element(s)
+"Pos" - Positive(s)
 "NSt" - New Stack()
 Important Links:

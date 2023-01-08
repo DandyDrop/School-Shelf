@@ -1,3 +1,5 @@
+Actually, I think I love this version of sorting code the most. So I will commit a lot more in this branch
+
 The repository to copy and access the school projects.
 Israel; 11-th grade
 
